@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h2 class="text-center mb-4">Add/Update User</h2>
+        <form [formGroup]="userForm" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="firstName" class="form-label fw-bold">First Name:</label>
+              <input type="text" formControlName="firstName" class="form-control" id="firstName" required>
+              <div class="invalid-feedback">
+                First Name is required.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="lastName" class="form-label fw-bold">Last Name:</label>
+              <input type="text" formControlName="lastName" class="form-control" id="lastName" required>
+              <div class="invalid-feedback">
+                Last Name is required.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label fw-bold">Email:</label>
+              <input type="email" formControlName="email" class="form-control" id="email" required>
+              <div class="invalid-feedback">
+                Email is required and must be a valid email address.
+              </div>
+            </div>
+            <div formGroupName="address" class="mb-3">
+              <label for="street" class="form-label fw-bold">Street:</label>
+              <input type="text" formControlName="street" class="form-control" id="street" required>
+              <div class="invalid-feedback">
+                Street is required.
+              </div>
+            </div>
+            <div formGroupName="address" class="mb-3">
+              <label for="city" class="form-label fw-bold">City:</label>
+              <input type="text" formControlName="city" class="form-control" id="city" required>
+              <div class="invalid-feedback">
+                City is required.
+              </div>
+            </div>
+            <div formGroupName="address" class="mb-3">
+              <label for="zipcode" class="form-label fw-bold">Zipcode:</label>
+              <input type="text" formControlName="zipcode" class="form-control" id="zipcode" required>
+              <div class="invalid-feedback">
+                Zipcode is required.
+              </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                  <button type="button" class="btn btn-primary w-100 mb-2" (click)="onAddUser()">Add</button>
+                </div>
+                <div class="col">
+                  <button type="button" class="btn btn-primary w-100" (click)="onEditUser()">Edit</button>
+                </div>
+              </div>
+          </form>
+      </div>
+    </div>
+</div>
